@@ -44,7 +44,7 @@ Insert the Guest Additions CD from the VirtualBox menu and run the installer. Fo
 <br />
 Step 3 – Configure Shared Folder<br/><br/>
 Create a shared folder on the host machine and map it in VirtualBox settings. Enable Auto-mount and Make Permanent to allow seamless file transfer between host and VM: <br/>
-<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%202.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
+<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%203.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
 <br />
 Step 4 – Test File Transfer<br/><br/>
 Copy a file (e.g., image) from the host system and paste it into the shared folder inside the VM to verify Guest Additions is working correctly: <br/>
