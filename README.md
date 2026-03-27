@@ -35,46 +35,54 @@ This builds on the previous lab where Active Directory Domain Services (AD DS) w
 
 <p align="center">
 Step 1 – Log into Windows Server 2022<br/><br/>
-Start the virtual machine and log in using the Administrator account credentials created during from the previous setup: <br/>
-<img src="https://github.com/royalexvo/HelpDesk-Home-Lab-Active-Directory-Setup-Domain-Controller-Promotion-Windows-Server-2022-/blob/main/Step%201.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
+Start the virtual machine and log in using the Administrator account credentials created in the previous lab: <br/>
+<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%201.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
 <br/>
-Step 2 – Rename the Server<br/><br/>
-Open Server Manager and navigate to Local Server. Click on the current computer name, select Change, and rename the server to CA-DC-01. Restart the server to apply the changes: <br/>
-<img src="https://github.com/royalexvo/HelpDesk-Home-Lab-Active-Directory-Setup-Domain-Controller-Promotion-Windows-Server-2022-/blob/main/Step%202.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
+Step 2 – Install VirtualBox Guest Additions<br/><br/>
+Insert the Guest Additions CD from the VirtualBox menu and run the installer. Follow the prompts (Next → Install) and reboot the machine when prompted: <br/>
+<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%202.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
 <br />
-Step 3 – Install Active Directory Domain Services<br/><br/>
-In Server Manager, click Manage → Add Roles and Features. Proceed through the wizard, select Active Directory Domain Services, add required features, and complete the installation: <br/>
-<img src="https://github.com/royalexvo/HelpDesk-Home-Lab-Active-Directory-Setup-Domain-Controller-Promotion-Windows-Server-2022-/blob/main/Step%203.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
+Step 3 – Configure Shared Folder<br/><br/>
+Create a shared folder on the host machine and map it in VirtualBox settings. Enable Auto-mount and Make Permanent to allow seamless file transfer between host and VM: <br/>
+<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%202.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
 <br />
-Step 4 – Begin Domain Controller Promotion<br/><br/>
-Once installation is complete, click the Notifications flag in Server Manager and select Promote this server to a domain controller to begin configuration: <br/>
-<img src="https://github.com/royalexvo/HelpDesk-Home-Lab-Active-Directory-Setup-Domain-Controller-Promotion-Windows-Server-2022-/blob/main/Step%204.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
+Step 4 – Test File Transfer<br/><br/>
+Copy a file (e.g., image) from the host system and paste it into the shared folder inside the VM to verify Guest Additions is working correctly: <br/>
+<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%204.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
 <br />
-Step 5 – Create a New Forest<br/><br/>
-Choose Add a new forest and enter your domain name (e.g., Myforest.com). This will create a new Active Directory environment: <br/>
-<img src="https://github.com/royalexvo/HelpDesk-Home-Lab-Active-Directory-Setup-Domain-Controller-Promotion-Windows-Server-2022-/blob/main/Step%205.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
+Step 5 – Open Active Directory Users and Computers<br/><br/>
+Launch Active Directory Users and Computers (ADUC) and expand the domain to access organizational units such as Users: <br/>
+<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%205.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
 <br />
-Step 6 – Configure Domain Controller Settings<br/><br/>
-Set a Directory Services Restore Mode (DSRM) password. Leave the default settings for domain and forest functional levels, then continue through the setup: <br/>
-<img src="https://github.com/royalexvo/HelpDesk-Home-Lab-Active-Directory-Setup-Domain-Controller-Promotion-Windows-Server-2022-/blob/main/Step%206.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
+Step 6 – Create a New User Account<br/><br/>
+Right-click the Users container → New → User. Enter user details (e.g., John Doe), assign a password, and complete the setup: <br/>
+<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%206.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
 <br />
-Step 7 – Install and Promote the Domain Controller<br/><br/>
-Proceed through the remaining configuration steps and click Install: <br/>
-<img src="https://github.com/royalexvo/HelpDesk-Home-Lab-Active-Directory-Setup-Domain-Controller-Promotion-Windows-Server-2022-/blob/main/Step%207.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
+Step 7 – Verify User Creation<br/><br/>
+Confirm the new user appears in the Users container within Active Directory: <br/>
+<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%207.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
 <br/>
-Step 8 – Wait for Server Restart<br/><br/>
-The system will automatically restart after promotion. Allow the server time to apply all configurations and complete setup: <br/>
-<img src="https://github.com/royalexvo/HelpDesk-Home-Lab-Active-Directory-Setup-Domain-Controller-Promotion-Windows-Server-2022-/blob/main/Step%208.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
+Step 8 – Modify User Properties<br/><br/>
+View/edit user details such as: Address and location, Phone number, Department and job title, and Manager/reporting structure: <br/>
+<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%208.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
 <br/>
-Step 9 – Verify Domain Configuration<br/><br/>
-After logging back in, open Command Prompt and run commands such as whoami and systeminfo to confirm the server is part of the new domain and functioning as a Domain Controller: <br/>
-<img src="https://github.com/royalexvo/HelpDesk-Home-Lab-Active-Directory-Setup-Domain-Controller-Promotion-Windows-Server-2022-/blob/main/Step%209(fix).png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
+Step 9 – Manage User Account Settings<br/><br/>
+Use right-click options to: Reset password, Disable or enable account, Unlock account, or Configure logon hours: <br/>
+<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%209.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
 <br/>
-Step 10 – Confirm Active Directory Installation<br/><br/>
-Open Active Directory Users and Computers from Server Manager and verify that your domain (Myforest.com) is present and accessible: <br/>
-<img src="https://github.com/royalexvo/HelpDesk-Home-Lab-Active-Directory-Setup-Domain-Controller-Promotion-Windows-Server-2022-/blob/main/Step%2010.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
+Step 10 – Configure Logon Hours<br/><br/>
+Restrict when a user can log in by selecting allowed days and times. This can fully block or limit access based on business requirements: <br/>
+<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%2010.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
 <br/>
-Step 11 – Shut Down the Virtual Machine<br/><br/>
-Once verification is complete, safely shut down the virtual machine from VirtualBox: <br/>
-<img src="https://github.com/royalexvo/HelpDesk-Home-Lab-Active-Directory-Setup-Domain-Controller-Promotion-Windows-Server-2022-/blob/main/Step%2011.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
+Step 11 – Verify User via Command Line<br/><br/>
+Use the following command to check account details: net user "John Doe" /domain. This displays password info, group membership, and account status: <br/>
+<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%2011.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
+<br/>
+Step 12 – Create Additional Users<br/><br/>
+Repeat the process to create additional accounts (e.g., Kevin) for future labs and testing scenarios: <br/>
+<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%2012.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
+<br/>
+Step 13 – Lab Completion<br/><br/>
+This lab focuses on foundational Active Directory tasks such as user creation and basic account management. Future labs will involve joining client machines (Windows 11) to the domain and expanding functionality: <br/>
+<img src="https://github.com/royalexvo/Helpdesk-Home-Lab-Active-Directory-User-Management-Guest-Additions-Windows-Server-2022-/blob/main/Step%2013.png?raw=true" height="80%" width="80%" alt="Lab Steps"/>
 </p>
